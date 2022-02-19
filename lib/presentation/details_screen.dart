@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iota_one_test/domain/models/http/product.dart';
+import 'package:iota_one_test/domain/models_http/product.dart';
 import 'package:iota_one_test/presentation/common/app_strings.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -14,9 +14,9 @@ class DetailsScreen extends StatelessWidget {
         title: const Text(AppStrings.details),
         centerTitle: true,
       ),
-      body: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(product.name.toString()),
+          Text(product.name ?? ''),
           buildImage(),
           buildDescription(),
           const SizedBox(height: 12),
@@ -43,9 +43,9 @@ class DetailsScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(product.price!.amount.toString()),
+        Text(product.price!.amount ?? ''),
         const SizedBox(width: 12),
-        Text(product.price!.currency.toString()),
+        Text(product.price!.currency ?? ''),
       ],
     );
   }
@@ -53,7 +53,7 @@ class DetailsScreen extends StatelessWidget {
   Padding buildImage() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Image.network(product.mainImage.toString(), fit: BoxFit.cover),
+      child: Image.network(product.mainImage ?? '', fit: BoxFit.cover),
     );
   }
 
@@ -61,7 +61,7 @@ class DetailsScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Text(
-        product.description.toString(),
+        product.description ?? '',
         style: const TextStyle(fontSize: 18),
       ),
     );

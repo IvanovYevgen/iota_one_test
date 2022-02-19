@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:iota_one_test/app/http_helper.dart';
-import 'package:iota_one_test/domain/models/http/product.dart';
+import 'package:iota_one_test/domain/models_http/product.dart';
 import 'package:iota_one_test/domain/product_remote_repository.dart';
 
 @LazySingleton(as: ProductRemoteRepository)

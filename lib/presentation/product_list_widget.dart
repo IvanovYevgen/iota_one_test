@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iota_one_test/domain/models/http/product.dart';
+import 'package:iota_one_test/domain/models_http/product.dart';
 import 'package:iota_one_test/presentation/bloc/products_cubit.dart';
 import 'package:iota_one_test/presentation/details_screen.dart';
 
@@ -39,10 +39,10 @@ class _ProductListWidgetState extends State<ProductListWidget> {
           contentPadding: const EdgeInsets.fromLTRB(40, 50, 20, 20),
           subtitle: Row(
             children: [
-              Text(products[index].price!.amount.toString(),
+              Text(products[index].price!.amount ?? '',
                   style: const TextStyle(fontSize: 18)),
               const SizedBox(width: 12),
-              Text(products[index].price!.currency.toString(),
+              Text(products[index].price!.currency ?? '',
                   style: const TextStyle(fontSize: 18)),
             ],
           ),
@@ -58,11 +58,10 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                           DetailsScreen(product: products[index])),
                 );
               },
-              child: Image.network(products[index].mainImage.toString(),
-                  fit: BoxFit.cover),
+              child: Image.network(products[index].mainImage ?? '', fit: BoxFit.cover),
             ),
           ),
-          title: Text(products[index].name.toString()),
+          title: Text(products[index].name ?? ''),
         );
       },
     );

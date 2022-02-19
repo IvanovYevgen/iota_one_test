@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 import 'package:iota_one_test/app/locator.dart';
-import 'package:iota_one_test/domain/models/http/product.dart';
+import 'package:iota_one_test/domain/models_http/product.dart';
 import 'package:iota_one_test/domain/product_remote_repository.dart';
 import 'package:iota_one_test/domain/product_repository.dart';
 
@@ -15,7 +16,7 @@ class ProductRepositoryImpl implements ProductRepository {
     try {
       productsList = await _remoteRepository.fetchProducts();
     } catch (err) {
-      print(err);
+      debugPrint(err.toString());
     }
     return productsList;
   }

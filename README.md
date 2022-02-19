@@ -1,16 +1,6 @@
 # iota_one_test
 
-A new Flutter application.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To display a list of products, an architecture was developed based on Clean Architecture. Business logic implemented
+on the basis of Cubit. Api allows us to receive responses from the server and parse them into objects.
+The application is divided into layers, according to a Clean Architecture and Solid.
+Implemented two screens for displaying data, as well as routing.
