@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:iota_one_test/domain/models_http/price.dart';
 import 'package:json_annotation/json_annotation.dart';
 

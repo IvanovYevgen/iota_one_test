@@ -9,9 +9,10 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: locator<ProductsCubit>()..setup(),
-      child: const ProductListWidget(),
-    );
+    return BlocProvider<ProductsCubit>(
+        create: (BuildContext context) {
+          return locator<ProductsCubit>();
+        },
+        child: const ProductListWidget());
   }
 }
